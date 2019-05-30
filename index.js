@@ -21,7 +21,6 @@ const run = ({ dir, isDevelopment = false, timeout = 6000, urlSlack }, callback)
 
   mocha.run(report => {
     if (!isDevelopment) {
-      console.log(report)
       const slack = new SlackWebhook(urlSlack, {
         defaults: {
           username: 'BotTest',
@@ -36,7 +35,7 @@ const run = ({ dir, isDevelopment = false, timeout = 6000, urlSlack }, callback)
 
 run({
   dir: path.join(process.cwd(), 'tests'),
-  urlSlack: 'https://hooks.slack.com/services/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a'
+  urlSlack: ''
 })
 module.exports = {
   run
